@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+
+<style>
+    body {
+        font: normal 20pt arial;
+        color: aliceblue;
+        background-image: linear-gradient(50deg, #0F2027, #2C5364);
+        background-attachment: fixed;
+    }
+
+    section {
+        width: 30%;
+        padding: 2pc;
+        margin: 0 auto;
+        text-align: center;
+        border: aliceblue solid 5pt;
+        margin-top: 15%;
+    }
+
+    input {
+        background-color: rgba(0, 0, 0, 0);
+        color: aliceblue;
+        font: normal 20pt arial;
+        width: 25%;
+        border: aliceblue solid 5pt;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <section>
+        <h2>Contador</h2>
+        <p>
+            <h1 id="cont">0</h1>
+            <input type="button" value="+">
+            <input type="button" value="C">
+            <input type="button" value="-">
+        </p>
+    </section>
+
+    <script>
+        var add = window.document.querySelectorAll("input")[0];
+        var rmv = window.document.querySelectorAll("input")[2];
+        var cls = window.document.querySelectorAll("input")[1];
+        var cont = window.document.getElementById("cont");
+        var num = 0;
+        add.addEventListener("click", addFunction);
+        rmv.addEventListener("click", rmvFunction);
+        cls.addEventListener("click", clear);
+
+        function addFunction() {
+            num++;
+            cont.innerText = num;
+        };
+
+        function rmvFunction() {
+            num--;
+            cont.innerText = num;
+        };
+
+        function clear() {
+            num = 0;
+            cont.innerText = num;
+        };
+    </script>
+</body>
+
+</html>
